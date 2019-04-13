@@ -1,24 +1,21 @@
 @extends('layouts.app')
+
+@section('content')
 <title>Contacter</title>
 <link rel="stylesheet" href="css/contacter.css">
-@section('content')
- 
 {{-- background-image: url("/img/grey.jpg"); --}}
-</head>
-
-<body>
-
+ 
 <div class="w3-container w3-center w3-animate-right">
     <h1 style="color:#181DB6; font: sans-serif;">{{$title}}</h1></div>
     <div class="conatiner-fluid">
-
 
     <form id="form_contact" class="jqform" action="/succes" method="get">
     
       <div id="abc" class="container">
       <p class="txt" style="color:#070B91;text-shadow:1px 1px 0 #0E15D8color:#070B91;font-family: Helvetica, Arial, sans-serif;line-height: 1.5; " >Pour plus d'information, veuillez remplir le formulaire suivant : </p>
               <input type="hidden" name="code_menu" id="code_menu" value="18" required/>
-              <div class="clear"> </div>
+              <div class="clear"> 
+              </div>
               <label class="label">Liste des contacts :</label>
               <select   name="agents">
                 <option value="0">Liste des contacts</option>
@@ -52,8 +49,8 @@
                
              
               <div class="blocbt">
-                <input name="" type="reset" class="bt" value="Effacer" />
-                <input class="bt" name="" type="submit" value="Envoyer" />
+                <input name="" type="reset" class="bt" value="Effacer" placeholder="Effacer" />
+                <input class="bt" name="" type="submit" value="Envoyer" placeholder="Envoyer" />
               </div>
               <p class="txt_obligatoire"><em>* Champ obligatoire</em></p>
             </form> </div>
