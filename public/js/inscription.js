@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     var MaxInputs= 5; 
     var containerCom       = $("#containerCom"); 
@@ -54,13 +53,21 @@ $(document).ready(function() {
 });
 
   function CalculScore() {
-    communicationD= document.getElementById("communicationD");
-    publicationD= document.getElementById("publicationD");
-    NC= document.getElementById("nationalC");
-    IC= document.getElementById("internationalC");
-    NP= document.getElementById("nationalP");
-    IP= document.getElementById("internationalP");
-    var score=0;
+      var getUrl = window.location;
+      var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1]+ "/public";
+      communicationD= document.getElementById("communicationD");
+      publicationD= document.getElementById("publicationD");
+      NC= document.getElementById("nationalC");
+      IC= document.getElementById("internationalC");
+      NP= document.getElementById("nationalP");
+      IP= document.getElementById("internationalP");
+      $.ajax({
+        type: "get",
+        url: (baseUrl + '/calculate/' + communicationD + '/' + publicationD + '/' + NC + '/' + IC + '/' + NP + '/' + IP),
+        dataType: "json",
+        success: function (response){
+        },
+    });
     console.log("score",score);
     console.log("publicationD",publicationD.value);
     console.log("internationalC",IC);
@@ -172,11 +179,15 @@ function formReset() {
 function submitform() {
  var1=document.getElementById("Etudiant");
  var2=document.getElementById("Doctor");
+ 
  if(var1.checked==true)
  {
-        document.getElementById("thediv").innerHTML = '<div class="fieldgroup"><h4 style="color:0B0C51">nombre d annees en these </h4><select id="nbranne" ></br> <option value="1" disabled>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" disabled>5</option><option value="6" disabled>6</option><option value="7" disabled>7</option></select></div><br><h4 style="color:0B0C51">Manuscrit de thèse déposée : </h4>  <h4  style="display: inline;margin: 25px;color:0B0C51" > Oui </h4> <input type="radio" onclick="myFunction3()" name="type"  id="Oui"/> <h4  style="display: inline;margin: 25px;color:0B0C51" > Non </h4><input type="radio" onclick="myFunction3()" name="type"  id="Non"/>  <div id="t2" style="display:none"><h4 style="color:0B0C51">Vous vous pouvez passer à l étape suivant</h4></div><div id="t1" style="display:none" > <br> <h4 style="color:0B0C51" >intitulé du thése : </h4> <input  style="color:0B0C51" type="text" placeholder="intitulé du thése" > <h4 style="color:0B0C51" >Date de dépot :</h4><input style="color:0B0C51" type="date"></div>';}
- else
+     document.getElementById("titlee").innerHTML = 'Candidature Etudiant ';
+    document.getElementById("thediv").innerHTML = '<div class="fieldgroup"><h4 style="color:0B0C51">nombre d annees en these </h4><select id="nbranne" ></br> <option value="1" disabled>1</option><option value="5">2</option><option value="7">3</option><option value="7">4</option><option value="5" disabled>5</option><option value="6" disabled>6</option><option value="7" disabled>7</option></select></div><br><h4 style="color:0B0C51">Manuscrit de thèse déposée : </h4>  <h4  style="display: inline;margin: 25px;color:0B0C51" > Oui </h4> <input type="radio" onclick="myFunction3()" name="type"  id="Oui"/> <h4  style="display: inline;margin: 25px;color:0B0C51" > Non </h4><input type="radio" onclick="myFunction3()" name="type"  id="Non"/>  <div id="t2" style="display:none"><h4 style="color:0B0C51">Vous vous pouvez passer à l étape suivant</h4></div><div id="t1" style="display:none" > <br> <h4 style="color:0B0C51" >intitulé du thése : </h4> <input  style="color:0B0C51" type="text" placeholder="intitulé du thése" > <h4 style="color:0B0C51" >Date de dépot :</h4><input style="color:0B0C51" type="date"></div>';
+    }
+        else if(var2.checked==true)
  {
+    document.getElementById("titlee").innerHTML = 'Candidature Doctor ';
     document.getElementById("thediv").innerHTML = '<div class="fieldgroup"><h5 style="color:0B0C51" ><b>Combien d années avez-vous passé dans la thése :</b></h5><input type="Number" min="1" max="7" name="Thése1" id="these1" /></div><div class="fieldgroup"><h5><b>Date soutenance de thèse :</b></h5><input type="Date" name="datesout" id="datesout" /></div><div class="fieldgroup"><h5><b>Nombre d inscrits en thèse :</b></h5> <input type="Number" min="1" max="7" name="nbrinscri" id="nbrinscri" /></div>';}
 }
 function myFunction3() {
@@ -391,3 +402,4 @@ setupClickHandlers();
 
 init();
   
+
