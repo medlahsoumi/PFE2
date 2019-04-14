@@ -1,5 +1,90 @@
 
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2>Our Partners</h2>
+                        <p>Mida sit una namet, cons uectetur adipiscing adon elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="owl-partners owl-carousel">
+                        
+                                 @if(count($concour)>0)
+                                    @foreach ($concour as $concours)
+                                    <div class="item">
+                                            
+                                        <h2 ><a  href="/concour/{{ $concours->id }}" >{{ $concours->titre}}</a></h2>
+                                        <small style="color:black;">Cree le {{ $concours->created_at }}</small> 
+                                        </div>
+                                @endforeach
+                                @else
+                                <p>no concour for u :(</p>
+                               @endif 
+                       
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="dark-bg short-section ">
+        <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2><img src="img/test.png" width="60">Vous pouvez voir les concours existants</h2>
+                        <p>Verifier pour plus d'informations </p>
+                    </div>
+                </div>
+            </div>
+        <div class="well">
+                
+                @if(count($concour)>0)
+                @foreach ($concour as $concours)
+                <div class="carousel-item" active>
+                    <h2  ><a  href="/concour/{{ $concours->id }}" >{{ $concours->titre}}</a></h2>
+                    <small style="color:black;">Cree le {{ $concours->created_at }}</small> 
+                </div> 
+            </div>
+           
+                @endforeach
+                 @else
+                 <p>no concour for u :(</p>
+                @endif 
+                
+                
+</div>
+</section>
+<section class="light-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2><img src="img/notif.png" width="50">Abonnez-vous pour recevoir des notifications dépositaires:</h2>
+                    <p>Choisissez votre specialite  </p>
+                    <div class="subscribe">
+                             
+                            <form action="/action_page.php">
+                                <label for="email">E-mail:</label>
+                               <input id="email" type="email" name="emailaddress">
+                               <label for="specialité">Specialité:</label>
+                            
+                         <br>
+                              <input id="abonner" style="color: white;" class="btn"type="submit" placeholder="S'abonner">
+                            </form>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</section>
+<!------
 <section class="dark-bg short-section stats-bar">
         <div class="container text-center">
             <div class="row">
@@ -29,117 +114,17 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>---->
     
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <h2>Our Partners</h2>
-                        <p>Mida sit una namet, cons uectetur adipiscing adon elit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="owl-partners owl-carousel">
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-1.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-2.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-3.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-4.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-5.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-6.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-7.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-8.png" alt="partners"></div>
-                        </div>
-                        <div class="item">
-                            <div class="partner-logo"><img src="images/demo/partners-9.png" alt="partners"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="team" class="light-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <h2>Our Team</h2>
-                        <p>A creative agency based on Candy Land, ready to boost your business with some beautifull templates. MOOZ Agency is one of the best in town see more you will be amazed.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- team member item -->
-                <div class="col-md-4">
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="images/demo/author-2.jpg" class="img-responsive" alt="author">
-                        </div>
-                        <div class="team-text">
-                            <h3>TOM BEKERS</h3>
-                            <div class="team-position">CEO & Web Design</div>
-                            <p>Mida sit una namet, cons uectetur adipiscing adon elit. Aliquam vitae barasa droma.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- end team member item -->
-                <!-- team member item -->
-                <div class="col-md-4">
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="images/demo/author-6.jpg" class="img-responsive" alt="author">
-                        </div>
-                        <div class="team-text">
-                            <h3>LINA GOSATA</h3>
-                            <div class="team-position">Photography</div>
-                            <p>Worsa dona namet, cons uectetur dipiscing adon elit. Aliquam vitae fringilla unda mir.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end team member item -->
-                <!-- team member item -->
-                <div class="col-md-4">
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="images/demo/author-4.jpg" class="img-responsive" alt="author">
-                        </div>
-                        <div class="team-text">
-                            <h3>John BEKERS</h3>
-                            <div class="team-position">Marketing</div>
-                            <p>Dolor sit don namet, cons uectetur beriscing adon elit. Aliquam vitae fringilla unda.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end team member item -->
-            </div>
-        </div>
-    </section>
+    
+    
     <section id="contact" class="dark-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="section-title">
-                        <h2>Contact Us</h2>
-                        <p>If you have some Questions or need Help! Please Contact Us!<br>We make Cool and Clean Design for your Business</p>
+                        <h2>Contactez-nous <img src="img/msg2.svg" width="50"></h2>
+                        <p>Si vous avez un probleme vous pouvez nous contacter </p>
                     </div>
                 </div>
             </div>
