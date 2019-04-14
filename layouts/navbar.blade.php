@@ -4,20 +4,30 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Accueil <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link" href="/contacter">Contacter</a>
+              </li>
+              
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/register" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Connecter 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/register">register</a>
+                  <hr>
+                  <a class="dropdown-item" href="/login">login</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Inscription">Deposer Votre Candidature</a>
+              </li>
       </ul>
+     
     </div>
   </nav>
   
