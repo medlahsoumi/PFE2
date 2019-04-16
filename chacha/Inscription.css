@@ -48,9 +48,12 @@
         z-index: -1;
         
         }
-        
+        #curs{
+         font-weight: bold;
+         color: 0B0C51;
+        }
         .form-instructions {
-        text-align: center;
+        
         }
         
         form {

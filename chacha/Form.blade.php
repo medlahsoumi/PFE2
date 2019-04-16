@@ -21,7 +21,7 @@
 
         <form id="deposeform" method="POST" action="{{action('inscriController@store') }}">
             
-<div class="animation-container" style="padding-bottom: 469px;" >
+<div class="animation-container" style="padding-bottom: 590px;" >
         <!-- Step one -->
 
         <div class="form-step js-form-step" style="left: 80;" data-step="1">
@@ -40,7 +40,7 @@
         
                 <!-- Step two -->
         <div class="form-step js-form-step waiting hidden"data-step="2">
-                <strong><h2 style="color:0B0C51">Données personnelles:</h2></strong>
+                <h2 style="color:0B0C51"> <strong> Données personnelles: </strong></h2> 
 
                               
                                <!-- <div id="f2" class="form-col">
@@ -107,7 +107,27 @@
                                 <!-- Step three -->
          <div class="form-step js-form-step waiting hidden"  style="height:469px;left: 5px;"  data-step="3">
 
-             <p class="form-instructions"  id="thediv">   {{-- <strong></strong> --}}
+             <div class="form-instructions"  id="thediv"> </div> 
+             <div class="fieldgroup">
+                   <p> <h3 style="color:0B0C51"> Type de diplome : </h3></p>
+                     <input type="radio" name="diplome" id="licence"> Licence + Mastere <br>
+                     <input type="radio" name="diplome" id="maitrise"> Maitrise + Mastere <br>
+                     <input type="radio" name="diplome" id="ingeniorat"> Ingeniorat <br>
+                     <p> <h3 style="color:0B0C51"> Mention de diplome : </h3></p>
+                     <select name="Mention">
+                     <option value="2">Assez bien</option>
+                     <option value="3">Bien</option>
+                     <option value="5">Tres bien</option>
+                   </select>
+                   
+
+                     <p> <h3 style="color:0B0C51"> Redoublement :</h3> </p>
+                     <select name="redoublement">
+                        <option value="10">aucun redoublement</option>
+                        <option value="5">une seule annee</option>
+                        <option value="0">deux annees ou plus</option>
+                      </select>
+             </div>
                       
                       
                    <div class="buttons">
